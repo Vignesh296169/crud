@@ -18,6 +18,7 @@ function App() {
     // console.log(ind)
     //  console.log("delte button clicked")
    let response= persons.filter((names,index)=>{
+    // logic written upon index,
        return index !==ind
     })
     // console.log(response)
