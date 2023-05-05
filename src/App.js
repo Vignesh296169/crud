@@ -8,18 +8,30 @@ function App() {
   //this persons default value has empty array..so we need get piece of from child to parent...so we need use call back method
   
   //this function is used to receive data from child
-  const valueHandler=(paramter)=>{
+  const valueHandler=(paramter)=>{//call back logic
     //this are we write parameter
      // here we need to update initial empty arrya using setpersons () function
-     setPersons([...persons,paramter])//whenever data or text corresponding to previous text or data we need to use this
+     setPersons([...persons,paramter])//push pandra area//whenever data or text corresponding to previous text or data we need to use this
   }
+  //delete logic.....................................................
+  const delteHandler=(ind)=>{
+    // console.log(ind)
+    //  console.log("delte button clicked")
+   let response= persons.filter((names,index)=>{
+       return index !==ind
+    })
+    // console.log(response)
+    setPersons(response)
+    /////////////////////////////////
+  }
+  console.log(persons)//periya array 
   return (
     <>
       <h1>hiiii</h1>
 
       <Form getValue={valueHandler}/>
       
-      <Reading value={persons} />
+      <Reading value={persons} onDelete={delteHandler}  />
       {/* props is used to communication or transfer something or everything from parent to child */}
       {/* how we create props in child like html attributes */}
     </>
